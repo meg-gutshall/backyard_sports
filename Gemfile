@@ -1,23 +1,19 @@
 source "https://rubygems.org"
 
-# Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 8.1.2"
-# The modern asset pipeline for Rails [https://github.com/rails/propshaft]
-gem "propshaft"
-# Use sqlite3 as the database for Active Record
-gem "sqlite3", ">= 2.1"
-# Use the Puma web server [https://github.com/puma/puma]
-gem "puma", ">= 5.0"
-# Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
-gem "importmap-rails"
-# Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
-gem "turbo-rails"
-# Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
-gem "stimulus-rails"
-# Use Dart SASS [https://github.com/rails/dartsass-rails]
+
 gem "dartsass-rails"
+gem "importmap-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
+gem "lograge"
+gem "nokogiri", force_ruby_platform: true
+# The modern asset pipeline for Rails [https://github.com/rails/propshaft]
+gem "propshaft"
+gem "puma", ">= 5.0"
+gem "sqlite3", ">= 2.1"
+gem "stimulus-rails"
+gem "turbo-rails"
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
@@ -34,38 +30,35 @@ gem "solid_cable"
 gem "bootsnap", require: false
 
 group :development, :test do
-  # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
-
+  gem "better_errors"
+  gem "binding_of_caller"
   # Audits gems for known security defects (use config/bundler-audit.yml to ignore issues)
   gem "bundler-audit", require: false
-
   # Static analysis for security vulnerabilities [https://brakemanscanner.org/]
   gem "brakeman", require: false
-
-  # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
+  # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
+  gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
+  gem "dotenv-rails"
+  gem "factory_bot_rails"
+  gem "faker"
+  gem "rspec-rails"
+  gem "rubocop-factory_bot"
+  gem "rubocop-rspec"
+  gem "rubocop-rspec_rails"
   gem "rubocop-rails-omakase", require: false
 end
 
 group :development do
+  gem "listen", group: :development
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
 end
-gem "lograge"
-gem "nokogiri", force_ruby_platform: true
-gem "better_errors", group: [:development, :test]
-gem "binding_of_caller", group: [:development, :test]
-gem "dotenv-rails", group: [:development, :test]
-gem "factory_bot_rails", group: [:development, :test]
-gem "faker", group: [:development, :test]
-gem "rspec-rails", group: [:development, :test]
-gem "rubocop-factory_bot", group: [:development, :test]
-gem "rubocop-rspec", group: [:development, :test]
-gem "rubocop-rspec_rails", group: [:development, :test]
-# Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
-gem "capybara", group: :test
-gem "selenium-webdriver", group: :test
-gem "shoulda", group: :test
-gem "simplecov", group: :test
-gem "webmock", group: :test
-gem "listen", group: :development
+
+group :test do
+  # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
+  gem "capybara"
+  gem "selenium-webdriver"
+  gem "shoulda"
+  gem "simplecov"
+  gem "webmock"
+end
