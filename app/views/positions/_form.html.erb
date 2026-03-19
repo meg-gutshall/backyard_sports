@@ -1,0 +1,37 @@
+<%= form_with(model: position) do |form| %>
+  <% if position.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(position.errors.count, "error") %> prohibited this position from being saved:</h2>
+
+      <ul>
+        <% position.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :offensive, style: "display: block" %>
+    <%= form.checkbox :offensive %>
+  </div>
+
+  <div>
+    <%= form.label :defensive, style: "display: block" %>
+    <%= form.checkbox :defensive %>
+  </div>
+
+  <div>
+    <%= form.label :sport_id, style: "display: block" %>
+    <%= form.text_field :sport_id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
