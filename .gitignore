@@ -28,11 +28,23 @@
 !/tmp/storage/
 !/tmp/storage/.keep
 
-/public/assets
-
 # Ignore key files for decrypting credentials and more.
-/config/*.key
+/config/**/*.key
 
-
+# Ignore build files and compiled assets.
+/public/assets
 /app/assets/builds/*
 !/app/assets/builds/.keep
+
+# Ignore the default SQLite database.
+/db/schema.rb
+/db/*.sqlite3*
+
+# Ignore OS X metadata
+.DS_Store
+
+# Ignore SimpleCov's output
+coverage
+
+# Ignore vendor installed gems
+/vendor/bundle
