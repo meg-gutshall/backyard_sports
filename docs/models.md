@@ -44,7 +44,7 @@
 ## Position
 
 - A list of positions for each sport
-- Attributes: `name`
+- Attributes: `name`, `offensive`, `defensive`
 - Relationships:
   - Sport
 
@@ -52,7 +52,7 @@
 
 - A list of rec leagues
 - Can sort by sport, location, age range, etc.
-- Attributes: `teams`, `gender`, `age_range`, `location`
+- Attributes: `name`, `num_teams`, `gender`, `age_range`, `location`
 - Relationships:
   - Sport
   - Team
@@ -61,7 +61,6 @@
 
 - Attributes: `name`, `num_players`
 - Relationships:
-  - Sport
   - League
   - Player Profiles
   - Coach Profiles
