@@ -36,6 +36,7 @@
 ## Sport
 
 - A list of sports available in the app
+- Attributes: `name`, `num_players`, `season`, `setting`, `scoring_method`
 - Relationships:
   - Position
   - League
@@ -43,6 +44,7 @@
 ## Position
 
 - A list of positions for each sport
+- Attributes: `name`
 - Relationships:
   - Sport
 
@@ -50,7 +52,7 @@
 
 - A list of rec leagues
 - Can sort by sport, location, age range, etc.
-- Attributes: `teams`
+- Attributes: `teams`, `gender`, `age_range`, `location`
 - Relationships:
   - Sport
   - Team
